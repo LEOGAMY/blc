@@ -1,0 +1,6628 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:alt" content="">
+    <meta property="og:url" content="https://recursos.blancacorredor.com/un_viaje_al_encuentro_de_tus_emociones">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:image" content="">
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGUITO.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGUITO.png">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://assets.mlcdn.com/ml/bootstrap/css/bootstrap-3.3.7.min.css">
+    <script src="https://assets.mlcdn.com/ml/jquery/jquery-3.4.1.min.js"></script>
+    <script src="https://assets.mlcdn.com/ml/bootstrap/js/bootstrap-3.3.7.min.js"></script>
+
+    <title></title>
+
+        
+    
+    <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1681203");</style>
+
+    <script src="https://assets.mlcdn.com/ml/moment/moment.min.js"></script>
+<script src="https://assets.mlcdn.com/ml/moment-timezone/moment-timezone-with-data.min.js"></script>
+
+<script>
+  var previousTimeZone = [];
+  var updatingTimer = false;
+
+	function timers(newDate) {
+    updatingTimer = true;
+
+		setTimeout(function(){
+			$('.countdown').each(function() {
+        var id = $(this).attr('id');
+        var selected_zone = $(this).attr('data-zone');
+        var zone = $(this).attr('data-' + selected_zone);
+
+        if (typeof previousTimeZone[id] === 'undefined') {
+          previousTimeZone[id] = zone;
+        }
+
+        // init countdown timer || || endTime changed || zone changed
+        if(!$(this).data('countdown-bound') || newDate || previousTimeZone[id] !== zone) {
+          previousTimeZone[id] = zone;
+          $(this).data('countdown-bound', true);
+
+          var endTime = newDate || $(this).attr('data-date');
+          var endTimeUTC = getUTC(endTime, zone);
+
+          initializeClock(id, endTimeUTC);
+        }
+
+			});
+      updatingTimer = false;
+		});
+	}
+
+	function getUTC(endTime, zone){
+	  var moment = window.moment;
+    try {
+      moment = window.top && window.top.moment;
+    } catch (err) { }
+    var format = 'YYYY-MM-DD HH:mm:ss';
+    if (moment.tz && zone) {
+      var date = moment.tz(endTime, zone);
+      date = date.tz ? date.tz("UTC") : date;
+    } else {
+      var date = moment(endTime, format);
+      date = (zone && date.tz) ? date.tz(zone) : date;
+    }
+    return date.format(format);
+  }
+
+	$(document).ready(function () {
+		timers();
+
+        $('body').on('DOMNodeInserted',function(e) {
+            if (! updatingTimer) {
+              timers();
+            }
+        });
+	});
+
+	function getTimeRemaining(endtime) {
+        endtime = endtime.replace(' ', 'T') + 'Z';
+        var currentTime = new Date();
+        var currentUTC = Date.parse(currentTime.toUTCString());
+        if (!endtime || Number.isNaN(Date.parse(endtime))) {
+            endtime = currentUTC;
+        }
+        var t = Date.parse(endtime) - currentUTC;
+		var seconds = Math.floor((t / 1000) % 60);
+		var minutes = Math.floor((t / 1000 / 60) % 60);
+		var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+		var days = Math.floor(t / (1000 * 60 * 60 * 24));
+		return {
+			'total': t,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
+
+	function initializeClock (id, endtime) {
+		var clock = document.getElementById(id);
+		var daysSpan = clock.querySelector('.days');
+		var hoursSpan = clock.querySelector('.hours');
+		var minutesSpan = clock.querySelector('.minutes');
+		var secondsSpan = clock.querySelector('.seconds');
+
+		function updateClock() {
+			var t = getTimeRemaining(endtime);
+
+			daysSpan.innerHTML = t.days;
+			hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+			minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+			secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+			if (t.total <= 0) {
+				daysSpan.innerHTML = '00';
+				hoursSpan.innerHTML = '00';
+				minutesSpan.innerHTML = '00';
+				secondsSpan.innerHTML = '00';
+			}
+		}
+
+		updateClock();
+
+		if (window['timerinterval' + id]) {
+			clearInterval(window['timerinterval' + id]);
+		}
+
+		window['timerinterval' + id] = setInterval(updateClock, 1000);
+	}
+</script>
+
+	<style type="text/css">
+	.ml-4 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-4 .img-responsive {
+		border-radius: 0px;
+	}
+</style><style type="text/css">
+	.ml-6 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-6 h1 {
+		color: #311d48;
+		font-size: 31px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-6 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-8 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-8 hr {
+		border-top: 4px solid #532d7a;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-10 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-10 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-10 h2 {
+		margin: 0 0 15px 0;
+		color: #311d48;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: left;
+	}
+	.text-10 p {
+		margin: 0 0 15px 0;
+		color: #311d48;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-10 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-10 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-10 {
+    text-align: center;
+  }
+  .btn-10 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-10 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-10 h1 {
+										font-size: 28px!important;
+									}
+									.ml-10 h2 {
+										font-size: 20px!important;
+									}
+									.ml-10 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-12 {
+		background-color: #ebdbdb;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.ml-12 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-12 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-12 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-12 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-14 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-14 hr {
+		border-top: 4px solid #532d7a;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-16 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-16 h1 {
+		color: #311d48;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-16 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-18 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-18 hr {
+		border-top: 4px solid #532d7a;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-20 {
+		background-color: #ebdbdb;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-20 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-20 h2 {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: left;
+	}
+	.text-20 p {
+		margin: 0 0 15px 0;
+		color: #7042a9;
+		font-size: 20px;
+		line-height: 32px;
+	}
+	.text-20 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-20 p a {
+		color: #000000;
+		font-size: 20;
+	}
+  .btn-20 {
+    text-align: center;
+  }
+  .btn-20 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-20 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-20 h1 {
+										font-size: 28px!important;
+									}
+									.ml-20 h2 {
+										font-size: 20px!important;
+									}
+									.ml-20 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-22 {
+		background-color: #dceff5;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-22 p {
+		color: #7042a9;
+		font-size: 28px;
+		line-height: 40px;
+		margin: 0 0 15px 0;
+	}
+	.ml-22 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-22 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-22 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-24 {
+		background-color: #ebdbdb;
+		padding-bottom: 10px;
+		padding-top: 0px;
+	}
+	.ml-24 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-24 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-24 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-24 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-26 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-26 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-26 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: left;
+	}
+	.text-26 p {
+		margin: 0 0 15px 0;
+		color: #311d48;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-26 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-26 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-26 {
+    text-align: center;
+  }
+  .btn-26 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: bold; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-26 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-26 h1 {
+										font-size: 28px!important;
+									}
+									.ml-26 h2 {
+										font-size: 20px!important;
+									}
+									.ml-26 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-28 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-28 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-30 {
+		background: url('') #ffffff;
+		background-position: center center;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-30 .btn {
+		background-color: #ab27cc;
+		font-size: 25px;
+		color: #f7f7f7;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		height: auto;
+		line-height: 100%;
+		padding: 7px 12px;
+		white-space: normal;
+	}
+	.ml-30 .btn:hover {
+		background-color: #311d48;
+		color: #f7f7f7;
+	}
+</style><style type="text/css">
+	.ml-32 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-32 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-34 {
+		background-color: #f7f7f7;
+		padding-bottom: 20px;
+		padding-top: 0px;
+	}
+	.ml-34 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-34 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-34 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-34 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-36 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-36 hr {
+		border-top: 4px solid #532d7a;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-38 {
+		background-color: #532d7a;
+		padding-bottom: 10px;
+		padding-top: 20px;
+	}
+	.ml-38 h1 {
+		color: #f2f5f7;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-38 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-40 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 30px;
+	}
+	.ml-40 p {
+		color: #872099;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-40 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-40 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-40 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-42 {
+		background-color: #34287d;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-42 p {
+		color: #1ed7e3;
+		font-size: 24px;
+		line-height: 36px;
+		margin: 0 0 15px 0;
+	}
+	.ml-42 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-42 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-42 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-44 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-44 .placeholder {
+		background-image: url('https://assets.mlcdn.com/ml/images/default/play.png'), url('https://assets.mlcdn.com/ml/images/default/background_video.jpg');
+		background-repeat: no-repeat;
+		background-position: center center, center center;
+	    border-radius: 5px;
+	}
+</style><style type="text/css">
+	.ml-46 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-46 .placeholder {
+		background-image: url('https://assets.mlcdn.com/ml/images/default/play.png'), url('https://assets.mlcdn.com/ml/images/default/background_video.jpg');
+		background-repeat: no-repeat;
+		background-position: center center, center center;
+	    border-radius: 5px;
+	}
+</style><style type="text/css">
+	.ml-48 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-48 .placeholder {
+		background-image: url('https://assets.mlcdn.com/ml/images/default/play.png'), url('https://assets.mlcdn.com/ml/images/default/background_video.jpg');
+		background-repeat: no-repeat;
+		background-position: center center, center center;
+	    border-radius: 5px;
+	}
+</style><style type="text/css">
+	.ml-50 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-50 .placeholder {
+		background-image: url('https://assets.mlcdn.com/ml/images/default/play.png'), url('https://assets.mlcdn.com/ml/images/default/background_video.jpg');
+		background-repeat: no-repeat;
+		background-position: center center, center center;
+	    border-radius: 5px;
+	}
+</style><style type="text/css">
+	.ml-52 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-52 .placeholder {
+		background-image: url('https://assets.mlcdn.com/ml/images/default/play.png'), url('https://assets.mlcdn.com/ml/images/default/background_video.jpg');
+		background-repeat: no-repeat;
+		background-position: center center, center center;
+	    border-radius: 5px;
+	}
+</style><style type="text/css">
+	.ml-54 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-54 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-56 {
+		background-color: #532d7a;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-56 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-56 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-56 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-56 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-58 {
+		background-color: #532d7a;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-58 p {
+		color: #00dbfa;
+		font-size: 30px;
+		line-height: 42px;
+		margin: 0 0 15px 0;
+	}
+	.ml-58 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-58 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-58 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.img-61 {
+		text-align: center;
+	}
+	.img-61 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-61 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-61 {
+
+		text-align: left;
+
+	}
+
+	.text-61 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-61 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-61 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-61 {
+		text-align: center;
+	}
+	.btn-61 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-61 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-62 {
+		text-align: center;
+	}
+	.img-62 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-62 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-62 {
+
+		text-align: left;
+
+	}
+
+	.text-62 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-62 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-62 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-62 {
+		text-align: center;
+	}
+	.btn-62 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-62 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-63 {
+		text-align: center;
+	}
+	.img-63 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-63 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-63 {
+
+		text-align: left;
+
+	}
+
+	.text-63 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-63 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-63 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-63 {
+		text-align: center;
+	}
+	.btn-63 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-63 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-61 {
+		text-align: center;
+	}
+	.img-61 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-61 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-61 {
+
+		text-align: left;
+
+	}
+
+	.text-61 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-61 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-61 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-61 {
+		text-align: center;
+	}
+	.btn-61 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-61 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-62 {
+		text-align: center;
+	}
+	.img-62 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-62 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-62 {
+
+		text-align: left;
+
+	}
+
+	.text-62 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-62 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-62 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-62 {
+		text-align: center;
+	}
+	.btn-62 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-62 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-61 {
+		text-align: center;
+	}
+	.img-61 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-61 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-61 {
+
+		text-align: left;
+
+	}
+
+	.text-61 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-61 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-61 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-61 {
+		text-align: center;
+	}
+	.btn-61 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-61 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+									.ml-60 {
+										background-color: #ffffff;
+										padding-bottom: 0px;
+										padding-top: 30px;
+									}
+									@media (max-width: 768px) {
+										.ml-60 h1 {
+											font-size: 28px!important;
+										}
+										.ml-60 h2 {
+											font-size: 20px!important;
+										}
+										.ml-60 p {
+											font-size: 14px!important;
+										}
+									}
+								</style><style type="text/css">
+	.ml-68 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-68 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.img-71 {
+		text-align: center;
+	}
+	.img-71 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-71 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-71 {
+
+		text-align: left;
+
+	}
+
+	.text-71 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-71 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-71 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-71 {
+		text-align: center;
+	}
+	.btn-71 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-71 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-72 {
+		text-align: center;
+	}
+	.img-72 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-72 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-72 {
+
+		text-align: left;
+
+	}
+
+	.text-72 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-72 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-72 p a {
+		color: #000000;
+		font-size: 14;
+
+	}
+	.btn-72 {
+		text-align: center;
+	}
+	.btn-72 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-72 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-73 {
+		text-align: center;
+	}
+	.img-73 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-73 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-73 {
+
+		text-align: left;
+
+	}
+
+	.text-73 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-73 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-73 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-73 {
+		text-align: center;
+	}
+	.btn-73 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-73 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-71 {
+		text-align: center;
+	}
+	.img-71 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-71 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-71 {
+
+		text-align: left;
+
+	}
+
+	.text-71 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-71 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-71 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-71 {
+		text-align: center;
+	}
+	.btn-71 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-71 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-72 {
+		text-align: center;
+	}
+	.img-72 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-72 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-72 {
+
+		text-align: left;
+
+	}
+
+	.text-72 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-72 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-72 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-72 {
+		text-align: center;
+	}
+	.btn-72 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-72 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-71 {
+		text-align: center;
+	}
+	.img-71 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-71 {
+		margin: 0 0 15px 0;
+		color: #ab27cc;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-71 {
+
+		text-align: left;
+
+	}
+
+	.text-71 p {
+		margin: 0 0 15px 0;
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-71 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-71 p a {
+		color: #000000;
+		font-size: 14;
+
+	}
+	.btn-71 {
+		text-align: center;
+	}
+	.btn-71 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-71 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+									.ml-70 {
+										background-color: #ffffff;
+										padding-bottom: 0px;
+										padding-top: 30px;
+									}
+									@media (max-width: 768px) {
+										.ml-70 h1 {
+											font-size: 28px!important;
+										}
+										.ml-70 h2 {
+											font-size: 20px!important;
+										}
+										.ml-70 p {
+											font-size: 14px!important;
+										}
+									}
+								</style><style type="text/css">
+	.ml-78 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-78 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-80 {
+		background-color: #532d7a;
+		padding-bottom: 0px;
+		padding-top: 20px;
+	}
+	.ml-80 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-80 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-80 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-80 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-82 {
+		background: url('') #ffffff;
+		background-position: center center;
+		padding-bottom: 0px;
+		padding-top: 30px;
+	}
+	.ml-82 .btn {
+		background-color: #ab27cc;
+		font-size: 25px;
+		color: #f7f7f7;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		height: auto;
+		line-height: 100%;
+		padding: 7px 12px;
+		white-space: normal;
+	}
+	.ml-82 .btn:hover {
+		background-color: #7f4b4e;
+		color: #f7f7f7;
+	}
+</style><style type="text/css">
+	.ml-84 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-84 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-86 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 0px;
+	}
+	.ml-86 h1 {
+		color: #532d7a;
+		font-size: 36px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-86 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-88 {
+		background-color: #d4bdbd;
+		padding-bottom: 0px;
+		padding-top: 20px;
+	}
+	.ml-88 h1 {
+		color: #532d7a;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-88 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-90 {
+		background-color: #d4bdbd;
+		padding-bottom: 10px;
+		padding-top: 0px;
+	}
+	.ml-90 h1 {
+		color: #dc5d12;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-90 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-92 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 30px;
+	}
+	.ml-92 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-92 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-92 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-92 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-92 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-92 {
+    text-align: center;
+  }
+  .btn-92 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-92 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-92 h1 {
+										font-size: 28px!important;
+									}
+									.ml-92 h2 {
+										font-size: 20px!important;
+									}
+									.ml-92 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-94 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-94 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-96 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-96 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-96 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-96 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-96 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-96 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-96 {
+    text-align: center;
+  }
+  .btn-96 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-96 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-96 h1 {
+										font-size: 28px!important;
+									}
+									.ml-96 h2 {
+										font-size: 20px!important;
+									}
+									.ml-96 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-98 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-98 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-100 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-100 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-100 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-100 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-100 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-100 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-100 {
+    text-align: center;
+  }
+  .btn-100 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-100 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-100 h1 {
+										font-size: 28px!important;
+									}
+									.ml-100 h2 {
+										font-size: 20px!important;
+									}
+									.ml-100 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-102 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-102 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-104 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-104 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-104 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-104 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-104 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-104 p a {
+		color: #000000;
+		font-size: 14;
+
+    }
+  .btn-104 {
+    text-align: center;
+  }
+  .btn-104 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-104 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-104 h1 {
+										font-size: 28px!important;
+									}
+									.ml-104 h2 {
+										font-size: 20px!important;
+									}
+									.ml-104 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-106 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-106 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-108 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+	.ml-108 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-108 h2 {
+		margin: 0 0 15px 0;
+		color: #311d48;
+		font-size: 34;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: left;
+	}
+	.text-108 p {
+		margin: 0 0 15px 0;
+		color: #531ee3;
+		font-size: 24px;
+		line-height: 36px;
+	}
+	.text-108 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-108 p a {
+		color: #000000;
+		font-size: 24;
+	}
+  .btn-108 {
+    text-align: center;
+  }
+  .btn-108 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: bold; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-108 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-108 h1 {
+										font-size: 28px!important;
+									}
+									.ml-108 h2 {
+										font-size: 22px!important;
+									}
+									.ml-108 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-110 {
+		background-color: #532d7a;
+		padding-bottom: 10px;
+		padding-top: 20px;
+	}
+	.ml-110 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-110 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-110 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-110 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-112 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 30px;
+	}
+	.ml-112 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-112 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-112 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-112 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-112 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-112 {
+    text-align: center;
+  }
+  .btn-112 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-112 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-112 h1 {
+										font-size: 28px!important;
+									}
+									.ml-112 h2 {
+										font-size: 20px!important;
+									}
+									.ml-112 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-114 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-114 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-116 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-116 .img-responsive {
+		border-radius: 0px;
+	}
+	.ml-116 h2 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+	.text-116 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-116 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-116 p a {
+		color: #000000;
+		font-size: 14;
+	}
+  .btn-116 {
+    text-align: center;
+  }
+  .btn-116 .btn {
+    background-color: #57d6de;
+    font-size: 17px;
+    color: #7c287d;
+    border-radius: 10px;
+  font-weight: normal; font-style: normal; text-decoration: none;
+    border: none;
+    margin-top: 15px;
+    padding: 6px 30px;
+  }
+  .btn-116 .btn:hover {
+    background-color: #7f4b4e;
+    color: #7c287d;
+  }
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-116 h1 {
+										font-size: 28px!important;
+									}
+									.ml-116 h2 {
+										font-size: 20px!important;
+									}
+									.ml-116 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-118 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 0px;
+	}
+	.ml-118 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-120 {
+		background-color: #d4bdbd;
+		padding-bottom: 0px;
+		padding-top: 20px;
+	}
+	.ml-120 h1 {
+		color: #532d7a;
+		font-size: 36px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-120 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-122 {
+		background-color: #d4bdbd;
+		padding-bottom: 10px;
+		padding-top: 0px;
+	}
+	.ml-122 h1 {
+		color: #532d7a;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-122 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-124 {
+		background: url('') #ffffff;
+		background-position: center center;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-124 .btn {
+		background-color: #ab27cc;
+		font-size: 25px;
+		color: #f7f7f7;
+		border-radius: 10px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		height: auto;
+		line-height: 100%;
+		padding: 7px 12px;
+		white-space: normal;
+	}
+	.ml-124 .btn:hover {
+		background-color: #7f4b4e;
+		color: #f7f7f7;
+	}
+</style><style type="text/css">
+	.ml-126 {
+		background-color: #532d7a;
+		padding-bottom: 10px;
+		padding-top: 20px;
+	}
+	.ml-126 p {
+		color: #ffffff;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-126 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-126 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-126 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.img-129 {
+		text-align: center;
+	}
+	.img-129 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-129 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-129 {
+
+		text-align: left;
+
+	}
+
+	.text-129 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-129 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-129 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-129 {
+		text-align: center;
+	}
+	.btn-129 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-129 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-130 {
+		text-align: center;
+	}
+	.img-130 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-130 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-130 {
+
+		text-align: left;
+
+	}
+
+	.text-130 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-130 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-130 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-130 {
+		text-align: center;
+	}
+	.btn-130 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-130 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-131 {
+		text-align: center;
+	}
+	.img-131 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-131 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-131 {
+
+		text-align: left;
+
+	}
+
+	.text-131 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-131 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-131 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-131 {
+		text-align: center;
+	}
+	.btn-131 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-131 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-129 {
+		text-align: center;
+	}
+	.img-129 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-129 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-129 {
+
+		text-align: left;
+
+	}
+
+	.text-129 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-129 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-129 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-129 {
+		text-align: center;
+	}
+	.btn-129 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-129 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-130 {
+		text-align: center;
+	}
+	.img-130 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-130 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-130 {
+
+		text-align: left;
+
+	}
+
+	.text-130 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-130 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-130 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-130 {
+		text-align: center;
+	}
+	.btn-130 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-130 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-129 {
+		text-align: center;
+	}
+	.img-129 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-129 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-129 {
+
+		text-align: left;
+
+	}
+
+	.text-129 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-129 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-129 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-129 {
+		text-align: center;
+	}
+	.btn-129 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-129 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+									.ml-128 {
+										background-color: #ffffff;
+										padding-bottom: 30px;
+										padding-top: 30px;
+									}
+									@media (max-width: 768px) {
+										.ml-128 h1 {
+											font-size: 28px!important;
+										}
+										.ml-128 h2 {
+											font-size: 20px!important;
+										}
+										.ml-128 p {
+											font-size: 14px!important;
+										}
+									}
+								</style><style type="text/css">
+	.img-137 {
+		text-align: center;
+	}
+	.img-137 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-137 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-137 {
+
+		text-align: left;
+
+	}
+
+	.text-137 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-137 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-137 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-137 {
+		text-align: center;
+	}
+	.btn-137 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-137 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-138 {
+		text-align: center;
+	}
+	.img-138 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-138 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-138 {
+
+		text-align: left;
+
+	}
+
+	.text-138 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-138 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-138 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-138 {
+		text-align: center;
+	}
+	.btn-138 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-138 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-139 {
+		text-align: center;
+	}
+	.img-139 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-139 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-139 {
+
+		text-align: left;
+
+	}
+
+	.text-139 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-139 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-139 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-139 {
+		text-align: center;
+	}
+	.btn-139 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-139 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-137 {
+		text-align: center;
+	}
+	.img-137 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-137 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-137 {
+
+		text-align: left;
+
+	}
+
+	.text-137 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-137 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-137 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-137 {
+		text-align: center;
+	}
+	.btn-137 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-137 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-138 {
+		text-align: center;
+	}
+	.img-138 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-138 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-138 {
+
+		text-align: left;
+
+	}
+
+	.text-138 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-138 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-138 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-138 {
+		text-align: center;
+	}
+	.btn-138 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-138 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+	.img-137 {
+		text-align: center;
+	}
+	.img-137 img {
+		display: inline-block !important;
+		margin: 0 0 15px 0;
+		border-radius: 0px;
+	}
+	.subtitle-137 {
+		margin: 0 0 15px 0;
+		color: #340c4d;
+		font-size: 20;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+
+	.text-137 {
+
+		text-align: left;
+
+	}
+
+	.text-137 p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+	}
+	.text-137 p:last-child {
+		margin-bottom: 0;
+	}
+	.text-137 p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.btn-137 {
+		text-align: center;
+	}
+	.btn-137 .btn {
+		background-color: #57d6de;
+		font-size: 17px;
+		color: #7c287d;
+		border-radius: 10px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		border: none;
+		margin-top: 15px;
+	}
+	.btn-137 .btn:hover {
+		background-color: #7f4b4e;
+		color: #7c287d;
+	}
+</style><style type="text/css">
+									.ml-136 {
+										background-color: #ffffff;
+										padding-bottom: 30px;
+										padding-top: 30px;
+									}
+									@media (max-width: 768px) {
+										.ml-136 h1 {
+											font-size: 28px!important;
+										}
+										.ml-136 h2 {
+											font-size: 20px!important;
+										}
+										.ml-136 p {
+											font-size: 14px!important;
+										}
+									}
+								</style><style type="text/css">
+	.ml-144 {
+		background-color: #d4bdbd;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-144 p {
+		color: #311d48;
+		font-size: 20px;
+		line-height: 32px;
+		margin: 0 0 15px 0;
+	}
+	.ml-144 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-144 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-144 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-146 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-146 p {
+		color: #532d7a;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-146 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-146 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-146 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-148 {
+		background-color: #d4bdbd;
+		padding-bottom: 0px;
+		padding-top: 10px;
+	}
+	.ml-148 p {
+		color: #311d48;
+		font-size: 20px;
+		line-height: 32px;
+		margin: 0 0 15px 0;
+	}
+	.ml-148 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-148 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-148 p {
+										font-size: 18px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-150 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 20px;
+	}
+	.ml-150 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-150 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-150 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-150 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-152 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-152 hr {
+		border-top: 4px solid #311d48;
+		width: 100%;
+	}
+</style><style type="text/css">
+	.ml-154 {
+		background-color: #d4bdbd;
+		padding-bottom: 0px;
+		padding-top: 30px;
+	}
+	.ml-154 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-154 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-154 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-154 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-156 {
+		background-color: #ffffff;
+		padding-bottom: 10px;
+		padding-top: 20px;
+	}
+	.ml-156 h1 {
+		color: #532d7a;
+		font-size: 36px;
+		font-weight: bold; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-156 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-159 .media-left {
+		padding-right: 15px;
+	}
+	.ml-159 .media-object {
+		border-radius: 100px;
+	}
+	.ml-159 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-159 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-159 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-159 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-159 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-159 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-159 .media-body .blockquote-159 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-159 .media-body .blockquote-159 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+	.ml-160 .media-left {
+		padding-right: 15px;
+	}
+	.ml-160 .media-object {
+		border-radius: 100px;
+	}
+	.ml-160 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-160 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-160 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-160 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-160 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-160 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-160 .media-body .blockquote-160 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-160 .media-body .blockquote-160 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+	.ml-161 .media-left {
+		padding-right: 15px;
+	}
+	.ml-161 .media-object {
+		border-radius: 100px;
+	}
+	.ml-161 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-161 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-161 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-161 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-161 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-161 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-161 .media-body .blockquote-161 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-161 .media-body .blockquote-161 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+	.ml-159 .media-left {
+		padding-right: 15px;
+	}
+	.ml-159 .media-object {
+		border-radius: 100px;
+	}
+	.ml-159 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-159 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-159 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-159 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-159 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-159 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-159 .media-body .blockquote-159 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-159 .media-body .blockquote-159 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+	.ml-160 .media-left {
+		padding-right: 15px;
+	}
+	.ml-160 .media-object {
+		border-radius: 100px;
+	}
+	.ml-160 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-160 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-160 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-160 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-160 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-160 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-160 .media-body .blockquote-160 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-160 .media-body .blockquote-160 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+	.ml-159 .media-left {
+		padding-right: 15px;
+	}
+	.ml-159 .media-object {
+		border-radius: 100px;
+	}
+	.ml-159 .media-body .media-heading {
+		margin: 0;
+		color: #340c4d;
+		font-size: 20;
+		text-align: left;
+		font-weight: bold; font-style: normal; text-decoration: none;
+	}
+	.ml-159 .media-body p:first-child {
+		margin-top: 15px;
+	}
+	.ml-159 .media-body p:last-child {
+		margin-bottom: 0px;
+	}
+	.ml-159 .media-body p {
+		margin: 0 0 15px 0;
+		color: #000000;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.ml-159 .media-body .details {
+		color: #000000;
+		font-size: 14;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		line-height: 24px;
+	}
+	.ml-159 .media-body p a {
+		color: #000000;
+		font-size: 14;
+	}
+	.ml-159 .media-body .blockquote-159 {
+		border-left-color: rgba(0, 0, 0, .5);
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+	.ml-159 .media-body .blockquote-159 p:first-child {
+		margin-top: 0;
+	}
+
+</style><style type="text/css">
+									.ml-158 {
+										background-color: #ffffff;
+										padding-bottom: 30px;
+										padding-top: 30px;
+									}
+									@media (max-width: 768px) {
+										.ml-158 h1 {
+											font-size: 28px!important;
+										}
+										.ml-158 h2 {
+											font-size: 20px!important;
+										}
+										.ml-158 p {
+											font-size: 14px!important;
+										}
+									}
+								</style><style type="text/css">
+	.ml-166 {
+		background-color: #ffffff;
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.ml-166 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-166 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-166 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-166 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-170 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-170 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-170 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-170 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-170 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-173 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-173 h1 {
+		color: #36119c;
+		font-size: 29px;
+		font-weight: normal; font-style: normal; text-decoration: none;
+		text-align: center;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-173 h1 {
+										font-size: 28px!important;
+									}
+								}
+							</style><style type="text/css">
+	.ml-175 {
+		background-color: #ffffff;
+		padding-bottom: 30px;
+		padding-top: 30px;
+	}
+	.ml-175 p {
+		color: #000000;
+		font-size: 14px;
+		line-height: 26px;
+		margin: 0 0 15px 0;
+	}
+	.ml-175 p:last-child {
+		margin-bottom: 0;
+	}
+	.ml-175 p a {
+		color: #000000;
+		text-decoration: underline;
+	}
+</style><style type="text/css">
+								@media (max-width: 768px) {
+									.ml-175 p {
+										font-size: 14px!important;
+									}
+								}
+							</style><style type="text/css">
+				.ml-176 {
+					background-color: #7c287d;
+					padding-bottom: 10px;
+					color: #ffffff;
+					font-size: 14px;
+					padding-top: 10px;
+				}
+				.ml-176 .social-icons {
+					margin: 0;
+					padding: 0;
+				}
+				.ml-176 .social-icons li {
+					list-style: none;
+					display: inline-block;
+					margin-right: 10px;
+				}
+				.ml-176 .social-icons li:last-child {
+					margin-right: 0;
+				}
+
+				@media (max-width: 768px) {
+					.ml-176 {
+						margin-bottom: 0px;
+						margin-top: 0px;
+					}
+				}
+
+			</style><style type="text/css">
+			body {
+				padding: 0px 0 0px 0;
+				background: #ffffff;
+			    font-family: 'Montserrat', sans-serif;
+			    line-height: 200%;
+			}
+			.ml-subscribe-form {
+				margin-top: 30px;
+			}
+			.checkbox.ml-validate-required.ml-error p, .checkbox.ml-validate-required.ml-error p a {
+				color: red!important;
+			}
+			@media only screen and (max-width: 480px) {
+
+  			.ml-form-recaptcha {
+          transform: scale(0.75) !important;
+          transform-origin: 0 0 !important;
+          max-width: 250px;
+        }
+
+      }
+		h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0 0 15px 0;
+}
+.align-center { text-align: center; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.mt0 { margin-top: 0 !important; }
+.mt10 { margin-top: 10px !important; }
+.mt15 { margin-top: 15px !important; }
+.mt20 { margin-top: 20px !important; }
+.mt30 { margin-top: 30px !important; }
+.mt40 { margin-top: 40px !important; }
+.mt50 { margin-top: 50px !important; }
+.mt60 { margin-top: 60px !important; }
+.mt70 { margin-top: 70px !important; }
+.mt80 { margin-top: 80px !important; }
+.mt90 { margin-top: 90px !important; }
+.mt100 { margin-top: 100px !important; }
+.mb0 { margin-bottom: 0 !important; }
+.mb10 { margin-bottom: 10px !important; }
+.mb15 { margin-bottom: 15px !important; }
+.mb20 { margin-bottom: 20px !important; }
+.mb30 { margin-bottom: 30px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb50 { margin-bottom: 50px !important; }
+.mb60 { margin-bottom: 60px !important; }
+.mb70 { margin-bottom: 70px !important; }
+.mb80 { margin-bottom: 80px !important; }
+.mb90 { margin-bottom: 90px !important; }
+.mb100 { margin-bottom: 100px !important; }
+.pt0 { padding-top: 0 !important; }
+.pt10 { padding-top: 10px !important; }
+.pt15 { padding-top: 15px !important; }
+.pt20 { padding-top: 20px !important; }
+.pt30 { padding-top: 30px !important; }
+.pt40 { padding-top: 40px !important; }
+.pt50 { padding-top: 50px !important; }
+.pt60 { padding-top: 60px !important; }
+.pt70 { padding-top: 70px !important; }
+.pt80 { padding-top: 80px !important; }
+.pt90 { padding-top: 90px !important; }
+.pt100 { padding-top: 100px !important; }
+.pb0 { padding-bottom: 0 !important; }
+.pb10 { padding-bottom: 10px !important; }
+.pb15 { padding-bottom: 15px !important; }
+.pb20 { padding-bottom: 20px !important; }
+.pb30 { padding-bottom: 30px !important; }
+.pb40 { padding-bottom: 40px !important; }
+.pb50 { padding-bottom: 50px !important; }
+.pb60 { padding-bottom: 60px !important; }
+.pb70 { padding-bottom: 70px !important; }
+.pb80 { padding-bottom: 80px !important; }
+.pb90 { padding-bottom: 90px !important; }
+.pb100 { padding-bottom: 100px !important; }
+.pl0 { padding-left: 0px !important; }
+.pr0 { padding-right: 0px !important; }
+
+form {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.form-group,
+.input-group {
+  z-index: 1;
+}
+.form-control {
+	border: none;
+	z-index: 1;
+}
+.form-control:focus {
+	border: none;
+	box-shadow: none;
+	outline: medium none;
+}
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus {
+	box-shadow: none;
+	outline: medium none;
+}
+
+.display-inline {
+    display: inline-block !important;
+}
+
+.display-none {
+    display: none !important;
+}
+		.navbar-brand {
+			padding: 0px;
+		}
+		.navbar-brand>img {
+			height: 100%;
+			padding: 7px 15px;
+			width: auto;
+		}
+		.ml-spacer-hack {
+			display: block;
+			height: 15px;
+		}
+		/* */
+		.display-table {
+			display: table;
+		    table-layout: fixed;
+		    width: 100%;
+		}
+		.col-middle {
+		    vertical-align: middle;
+		}
+		.col-height {
+		    display: table-cell;
+		    float: none;
+		    height: 100%;
+		}
+		.media {
+			margin-top: 0px;
+		}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.ml-error .label-description {
+  color: #ff0000 !important;
+}
+
+@media (max-width: 992px) {
+	.ts-block .media-left {
+		float: left;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.ts-block .media-left {
+		float: none;
+		width: auto;
+		margin-bottom: 0px;
+	}
+		
+	.container-fluid{
+		padding: 15px 30px!important;
+	}
+	
+	.hero h1 {
+		margin-bottom: 15px!important;
+	}
+
+	.ml-subscribe-form {
+		margin-top: 0!important;
+		padding: 15px 0!important;
+	}
+
+	.container {
+		padding: 0px!important;
+	}
+
+	.default {
+		padding: 0px 30px!important;
+	}
+
+	.copyright {
+		text-align: center!important;
+	}
+
+	ul.list-centered {
+		margin-bottom: -10px!important;
+	}
+
+	ul.list-centered li {
+		margin-bottom: 10px!important;
+	}
+
+	.social-icons-block {
+		text-align: center!important;
+	}
+
+	.social-icons-block ul {
+		float: none!important;
+	}
+
+	.navbar-header .navbar-brand{
+		/* Firefox */
+		width: -moz-calc(100% - 80px);
+		/* WebKit */
+		width: -webkit-calc(100% - 80px);
+		/* Opera */
+		width: -o-calc(100% - 80px);
+		/* Standard */
+		width: calc(100% - 80px);
+	}
+
+	.navbar-header .navbar-brand img{
+		padding: 0px!important;
+	}
+
+	.ml-date {
+		margin-bottom: 15px!important;
+	}
+
+	.ml-date:last-child {
+		margin-bottom: 0px!important;
+	}
+
+	.mb-30 {
+		margin-bottom: 15px!important;
+	}	
+	
+	.media .media-left .media-object {
+		width: 100px!important;
+	}
+	
+	.col-height {
+		display: block !important;
+	}
+	.col-image-text {
+		margin-bottom: 30px;
+	}
+	.col-text-image {
+		margin-top: 30px;
+	}
+	.col-res-30 {
+		margin-bottom: 30px;
+	}
+	.btn, .form-control {
+     white-space: normal !important;
+     line-height: 100% !important;
+     height: auto !important;
+     padding: 10px !important;
+	}
+	h1,h2,h3 {
+	    word-break: break-word;
+	}
+	/* Social share */
+	.list-centered.share-icons li a img {
+		margin: 5px;
+	}
+	/* Gallery */
+	.gallery .img-responsive {
+		margin-bottom: 30px;
+	}
+	.gallery .align-center:last-child .img-responsive {
+		margin-bottom: 0px;
+	}
+	
+	/* INPUT AND BUTTON  */
+
+	.input-group {
+    	width: 100%!important;
+	}
+	
+	span.input-group-btn {
+	    float: left!important;
+	    margin-top: 15px!important;
+	    width: 100%!important;
+	}
+	
+	button.btn {
+	    width: 100%!important;
+	}
+}
+
+		</style></head>
+	<body>
+		<div class="row-form">
+			
+					<div class="container-fluid ml-4">
+						<div class="container">
+
+<div class="row">
+  <div class="col-sm-12 align-center">
+		<img class="img-responsive display-inline" src="https://bucket.mlcdn.com/a/1083/1083966/images/33f4e5a4b3a49ee0b2e2930eb57f0cd3bf1caf9c.png" width="1598" border="0" style="display: block;">
+	</div>
+</div>
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-6">
+						<div class="container">
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>Una experiencia transformadora que te permitirá lograr el equilibrio emocional en sólo 2 semanas.</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-8">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-10">
+						<div class="container">
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-image-text" src="https://bucket.mlcdn.com/a/1083/1083966/images/63dc1d5cf5f9ed14537adb467525fa689bc99e83.png" style="display: block;" width="740" border="0">
+			</div>
+			<div class="col-sm-6 col-height col-middle">
+				<div class="content-align-center">
+					
+					<div class="text-10">
+						<h3 style="text-align: center;"><span style="font-size: 18px;"><span style="font-size: 22px;"><span style="font-size: 24px;"><span style="color: rgb(49, 29, 72);"><strong>¡Deja de sentirte víctima de tus emociones!</strong></span></span></span></span></h3>
+<h3><span style="font-size: 18px;"><span style="font-size: 22px;"><span style="font-size: 24px;"><span style="color: rgb(49, 29, 72);"><br></span></span></span></span></h3>
+<h3><span style="font-size: 18px;"><span style="font-size: 22px;"><span style="font-size: 24px;"><span style="color: rgb(49, 29, 72);">Ven&nbsp;y descubre que SÍ es posible tomar el control&nbsp;y&nbsp;vivir tu vida de una manera diferente.</span></span></span></span></h3>
+<p><span style="font-size: 22px;"><span style="color: rgb(49, 29, 72);"><span style="font-size: 24px;"></span></span></span></p>
+<h3><span style="font-size: 18px;"><span style="font-size: 22px;"><span style="font-size: 24px;"><span style="color: rgb(49, 29, 72);">Atrévete a hacer este viaje&nbsp;y experimenta una verdadera TRANSFORMACIÓN</span></span></span></span></h3>
+					</div>
+          
+				</div>
+			</div>
+		</div>
+	</div>	
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-12">
+						<div class="container">
+							
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="color: rgb(0, 123, 255);"><span style="color: rgb(0, 0, 0);"><strong><span style="font-size: 24px;"><span style="color: rgb(142, 68, 173);">¿Cómo saber si este Programa es para tí?</span></span></strong></span></span></p>
+<p><span style="font-size: 24px;">😡 </span><span style="font-size: 24px;"><span style="color: rgb(142, 68, 173);">¿Reaccionas de forma explosiva cuando te enojas y luego te arrepientes?</span></span></p>
+<p></p>
+<p><span style="font-size: 24px;">😢</span> <span style="font-size: 24px;"><span style="color: rgb(142, 68, 173);">¿Te cuesta trabajo superar un momento de tristeza?</span></span></p>
+<p></p>
+<p><span style="font-size: 24px;">😞 </span><span style="font-size: 24px;"><span style="color: rgb(142, 68, 173);">¿Te has perdido oportunidades porque el miedo te bloquea?</span></span><span style="font-size: 30px;"><span style="color: rgb(112, 66, 169);"><strong></strong></span></span><br></p>
+
+
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-14">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-16">
+						<div class="container">
+							
+<div class="row">
+  <div class="col-sm-12">
+		<h1>Hoy mismo puedes volver a conectar con la alegría, el entusiasmo y disfrutar tu vida plenamente</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-18">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-20">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle">
+				
+				<div class="text-20">
+					<p><strong><span style="font-size: 30px;">¿Sabes lo que ocurrirá en tu vida si no tomas la decisión de&nbsp;aprender a&nbsp;manejar adecuadamente tus emociones?</span></strong></p>
+				</div>
+        
+			</div>
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-text-image" src="https://bucket.mlcdn.com/a/1083/1083966/images/215dd8a1fe940266ea398ae4d1914f5b06127da4.png" style="display: block;" width="465" border="0">
+			</div>
+		</div>
+	</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-22">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <ul><li><span style="color: rgb(0, 123, 255);"><span style="color: rgb(0, 0, 0);"></span></span><span style="font-size: 20px;"><span style="color: rgb(112, 66, 169);">😡 Cuando te&nbsp;enojes y pierdas el control, tu reacción explosiva terminará dañando relaciones con personas importantes para ti.</span></span></li></ul>
+<ul><li><span style="font-size: 20px;"><span style="color: rgb(112, 66, 169);">😢 Cuando te&nbsp;dejes llevar por la tristeza, no disfrutarás los lindos momentos y&nbsp;cualquier situación se convertirá en un callejón oscuro y sin salida </span></span></li></ul>
+<ul><li><span style="font-size: 20px;"><span style="color: rgb(112, 66, 169);">😨 Cada vez que&nbsp;el miedo te paralice y te imagines situaciones negativas, que muchas veces ni siquiera ocurren, te perderás las mejores oportunidades de tu vida.</span></span></li></ul>
+<p></p>
+<p></p>
+<p></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-24">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="color: rgb(0, 123, 255);"><span style="color: rgb(0, 0, 0);"></span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px; color: rgb(49, 29, 72);"><strong>Todo esto será parte del pasado si realizas el Programa</strong></span></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-26">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-image-text" src="https://bucket.mlcdn.com/a/1083/1083966/images/35d27e0f11dd1c77a925cf026377cd8044076ebd.png" style="display: block;" width="890" border="0">
+			</div>
+			<div class="col-sm-6 col-height col-middle">
+				<div class="content-align-center">
+					<h2 class="subtitle-26">Una aventura de TRANSFORMACIÓN PERSONAL.</h2>
+					<div class="text-26">
+						<p><span style="font-size: 20px;">Un recorrido en el que aprenderás los <strong><span style="font-size: 20px;">5 pasos sencillos y efectivos </span></strong>para recuperar tu equilibrio emocional, adueñarte de tus estados emocionales y volver a&nbsp;<strong><span style="font-size: 20px;">sentirte en paz contigo y con los demás</span></strong>.</span></p>
+					</div>
+          
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-28">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-30">
+						<div class="container">
+							
+								
+	
+	
+
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<a class="btn btn-block" href="https://pay.hotmart.com/B76162116W" target="_blank">Sí, quiero vivir Un Viaje al Encuentro de mis Emociones</a>
+				
+
+	</div>
+</div>
+
+
+
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-32">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-34">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;"></p>
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);">Aprenderás los 5 pasos del Modelo ACOGE para gestionar todos los&nbsp;estados emocionales y nos enfocaremos&nbsp;</span></span><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);">en las 3 emociones que menos te gusta&nbsp;sentir:&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);"><strong><u>Tristeza, Miedo y Enojo</u></strong>&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);">Te enseñaré a gestionarlas de tal forma</span></span><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);"> que no te hagas, ni le hagas&nbsp;daño a nadie&nbsp;</span></span><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);"></span></span><span style="font-size: 24px;"><span style="color: rgb(112, 66, 169);">y podrás volver a sentir serenidad&nbsp; y&nbsp;felicidad.</span></span><br></p>
+
+
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-36">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-38">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>Al finalizar el Programa lograrás</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-40">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <ul>
+<li><span style="color: rgb(142, 68, 173);"><p><span style="font-size: 24px;">Mantener el equilibrio emocional&nbsp;en tu día a día aplicando los 5 pasos del Modelo ACOGE.</span></p></span></li></ul>
+<ul><li><p><span style="font-size: 24px;">Tener mejores relaciones con las personas que son importantes para tí.</span></p></li></ul>
+<ul><li><span style="color: rgb(142, 68, 173);"><span style="font-size: 24px;">Traer a tu vida&nbsp;mayor bienestar, alegría y serenidad.</span></span></li></ul>
+<ul><li><span style="color: rgb(142, 68, 173);"><span style="font-size: 24px;">Convertirte en un modelo a seguir en el manejo de tus emociones.</span></span></li></ul>
+<ul><li><span style="color: rgb(142, 68, 173);"><span style="font-size: 24px;">Disfrutar de una vida más tranquila y feliz.</span></span></li></ul>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-42">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;">No lo digo yo, lo dicen quienes ya han vivido la experiencia...</p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-44">
+						<div class="container">
+							
+								
+	
+	
+	
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		
+		
+		
+		<div class="embed-responsive embed-responsive-16by9">
+		   
+		   
+		   
+		   
+		   <iframe  width="1280" height="720" frameborder="0" allowfullscreen src="https://www.youtube-nocookie.com/embed/59IMRxqbuno?rel=0&amp;showinfo=0"></iframe>
+		   
+		   
+		   
+		</div>
+	</div>
+</div>
+
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-46">
+						<div class="container">
+							
+								
+	
+	
+	
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		
+		
+		
+		<div class="embed-responsive embed-responsive-16by9">
+		   
+		   
+		   
+		   
+		   <iframe width="1280" height="720" frameborder="0" allowfullscreen src="https://www.youtube-nocookie.com/embed/MhkskxHBu_k?rel=0&amp;showinfo=0"></iframe>
+		   
+		   
+		   
+		</div>
+	</div>
+</div>
+
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-48">
+						<div class="container">
+							
+								
+	
+	
+	
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		
+		
+		
+		<div class="embed-responsive embed-responsive-16by9">
+		   
+		   
+		   
+		   
+		   <iframe width="1280" height="720" frameborder="0" allowfullscreen src="https://www.youtube-nocookie.com/embed/9Q_GygNyJ74?rel=0&amp;showinfo=0"></iframe>
+		   
+		   
+		   
+		</div>
+	</div>
+</div>
+
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-50">
+						<div class="container">
+							
+								
+	
+	
+	
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		
+		
+		
+		<div class="embed-responsive embed-responsive-16by9">
+		   
+		   
+		   
+		   
+		   <iframe width="1280" height="720" frameborder="0" allowfullscreen src="https://www.youtube-nocookie.com/embed/lgsHmVJvoWg?rel=0&amp;showinfo=0"></iframe>
+		   
+		   
+		   
+		</div>
+	</div>
+</div>
+
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-52">
+						<div class="container">
+							
+								
+	
+	
+	
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		
+		
+		
+		<div class="embed-responsive embed-responsive-16by9">
+		   
+		   
+		   
+		   
+		   <iframe width="1280" height="720" frameborder="0" allowfullscreen src="https://www.youtube-nocookie.com/embed/bZrf9qGv1-o?rel=0&amp;showinfo=0"></iframe>
+		   
+		   
+		   
+		</div>
+	</div>
+</div>
+
+
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-54">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-56">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <h1><span style="color: rgb(142, 68, 173);"><span style="color: rgb(255, 255, 255);"><strong>
+
+¿Qué incluye?
+
+</strong></span></span><br></h1>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-58">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-60">
+						<div class="container">
+							
+								
+									
+									
+									
+										
+									
+									
+										
+										
+										
+										
+									
+									
+										
+										
+									
+									
+										
+										
+									
+								
+								
+								
+									<div class="row">
+										<div class="col-sm-6 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+<div class="img-61">
+	<img class="img-61 img-responsive" alt="" width="983" src="https://bucket.mlcdn.com/a/1083/1083966/images/98a050e5ba717b6a250529dc3c613da02fd696d0.png" style="display: block;" border="0">
+</div>
+<h2 class="subtitle-61">Videos</h2>
+<div class="text-61">
+	<p style="text-align: left;"><span style="font-size: 16px;"><strong><span style="color: rgb(112, 66, 169);"></span></strong></span><strong><span style="color: rgb(112, 66, 169);"><span style="font-size: 18px;">Tienes acceso indefinido a todos los videos del Programa.</span></span></strong></p>
+<p style="text-align: left;"><span style="font-size: 20px;"><span style="font-size: 18px;"><span style="color: rgb(142, 68, 173);"><strong>Durante dos semanas&nbsp;recibes diariamente un&nbsp;video en el que te comparto una técnica, una distinción o un ejercicio que debes llevar a la práctica en tu vida cotidiana y puedes volver a ellos cada vez que lo requieras.</strong></span></span></span><span style="font-size: 20px;"><span style="font-size: 18px;"><span style="color: rgb(142, 68, 173);"><strong><br><br></strong></span></span></span></p>
+<p style="text-align: left;"><span style="font-size: 20px;"><span style="font-size: 18px;"><span style="color: rgb(142, 68, 173);"><strong>Cada video&nbsp;tiene en promedio <strong>una duración </strong>de 10 a 15 minutos .</strong></span></span></span><br></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-6">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+<div class="img-62">
+	<img class="img-62 img-responsive" alt="" width="587" src="https://bucket.mlcdn.com/a/1083/1083966/images/450d958156860d20d66906f2979ceba0f6d024a9.png" style="display: block;" border="0">
+</div>
+<h2 class="subtitle-62">Guías de Trabajo</h2>
+<div class="text-62">
+	<p style="text-align: left;"><span style="color: rgb(142, 68, 173); font-size: 18px;"><strong>Ejercicios,&nbsp;cuestionarios y plantillas&nbsp;que te ayudarán a llevar un registro de tu avance en cada una de las Estaciones del Programa</strong></span><br></p>
+</div>
+
+
+
+
+
+											
+										</div>
+									</div>
+								
+								
+								
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-68">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-70">
+						<div class="container">
+							
+								
+									
+									
+									
+										
+									
+									
+										
+										
+										
+										
+									
+									
+										
+										
+									
+									
+										
+										
+									
+								
+								
+								
+									<div class="row">
+										<div class="col-sm-6 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+<div class="img-71">
+	<img class="img-71 img-responsive" alt="" width="1366" src="https://bucket.mlcdn.com/a/1083/1083966/images/5836b61d4a591f262e89f5e5a659780132fd2926.png" style="display: block;" border="0">
+</div>
+<h2 class="subtitle-71">Recursos Complementarios</h2>
+<div class="text-71">
+	<p style="text-align: left;"><span style="font-size: 16px;"><strong><span style="color: rgb(112, 66, 169);"></span></strong></span></p>
+<p><span style="color: rgb(142, 68, 173);"><span style="font-size: 18px;"><strong><br></strong></span></span></p>
+<p><span style="color: rgb(142, 68, 173);"><span style="font-size: 18px;"><strong>También encontrarás juegos, mapas, plantillas con </strong></span></span><span style="color: rgb(142, 68, 173);"><span style="font-size: 18px;"><strong><strong>técnicas y otros recursos que te mostrarán diferentes rutas para tener más empatía y gestionar mejor tus emociones.</strong></strong></span></span></p>
+<p style="text-align: left;"><span style="font-size: 20px;"><span style="font-size: 18px;"><span style="color: rgb(142, 68, 173);"><strong></strong></span></span></span><br></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-6">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+<div class="img-72">
+	<img class="img-72 img-responsive" alt="" width="512" src="https://bucket.mlcdn.com/a/1083/1083966/images/d34f2c710629fed32b3ef2f52c1a4396fc25707b.png" style="display: block;" border="0">
+</div>
+<h2 class="subtitle-72">3 semanas de acompañamiento</h2>
+<div class="text-72">
+	<p style="text-align: left;"><span style="color: rgb(142, 68, 173); font-size: 18px;"><strong>A través de un grupo exclusivo de Whatsapp</strong></span><br></p>
+</div>
+
+
+
+
+
+											
+										</div>
+									</div>
+								
+								
+								
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-78">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-80">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;"><span style="color: rgb(255, 255, 255);"><strong><span style="font-size: 24px;">Todo ésto&nbsp;tiene un valor de <span style="color: rgb(255, 193, 7);">$97 USD</span>&nbsp;que serán tu mejor inversión si piensas cómo&nbsp;impactará tu vida y la de las personas que más te importanel&nbsp;<strong><span style="font-size: 24px;">aprender a manejar tus emociones</span></strong></span></strong></span><br></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-82">
+						<div class="container">
+							
+								
+	
+	
+
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<a class="btn btn-block" href="https://pay.hotmart.com/B76162116W" target="_blank">Sí, ¡Quiero aprender a manejar mis emociones!</a>
+				
+
+	</div>
+</div>
+
+
+
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-84">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-86">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>¡Y ESO NO ES TODO!</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-88">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>RECIBIRÁS $296 USD EN BONOS ADICIONALES</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-90">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>¡COMPLETAMENTE GRATIS!</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-92">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle">
+				<h2 class="subtitle-92">BONO 1:</h2>
+				<div class="text-92">
+					<p style="text-align: center;"><span style="font-size: 30px; color: rgb(49, 29, 72);"><span style="color: rgb(49, 29, 72);">MASTER CLASS:&nbsp;Las Luces y las Sombras de nuestras emociones</span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADA EN $47 USD</strong></span></span></p>
+				</div>
+        
+			</div>
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-text-image" src="https://bucket.mlcdn.com/a/1083/1083966/images/c90da0fc20370ff857059f712a5c22e3801c38a8.jpeg" style="display: block;" width="1280" border="0">
+			</div>
+		</div>
+	</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-94">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-96">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-image-text" src="https://bucket.mlcdn.com/a/1083/1083966/images/6313d3e093ced144255dc0d26a168af446bebe40.jpeg" style="display: block;" width="703" border="0">
+			</div>
+			<div class="col-sm-6 col-height col-middle">
+				<div class="content-align-center">
+					<h2 class="subtitle-96">BONO 2:</h2>
+					<div class="text-96">
+						<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(49, 29, 72);">Visualización Dirigida: El Buffet de las Emociones&nbsp;+ Cuadernillo de ejercicios.</span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADO EN $37 USD</strong></span></span></p>
+					</div>
+          
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-98">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-100">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle">
+				<h2 class="subtitle-100">BONO 3:</h2>
+				<div class="text-100">
+					<p style="text-align: center;"><span style="font-size: 30px; color: rgb(49, 29, 72);"><span style="color: rgb(49, 29, 72);">EBOOK En mis emociones ¡YO ELIJO!<strong></strong></span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADO EN $19 USD</strong></span></span></p>
+				</div>
+        
+			</div>
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-text-image" src="https://bucket.mlcdn.com/a/1083/1083966/images/b08e11d4070da6eb4a0b6c8e99982d2020f775ff.png" style="display: block;" width="215" border="0">
+			</div>
+		</div>
+	</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-102">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-104">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-image-text" src="https://bucket.mlcdn.com/a/1083/1083966/images/b96f22b6915bf34cbcf3d668fead3ed7aee8db55.png" style="display: block;" width="214" border="0">
+			</div>
+			<div class="col-sm-6 col-height col-middle">
+				<div class="content-align-center">
+					<h2 class="subtitle-104">BONO 4:</h2>
+					<div class="text-104">
+						<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(49, 29, 72);">EBOOK: ¿Cómo cambiar mi forma de pensar en momentos de miedo e incertidumbre?</span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADO EN $19 USD</strong></span></span></p>
+					</div>
+          
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-106">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-108">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle">
+				<h2 class="subtitle-108">BONO 5:</h2>
+				<div class="text-108">
+					<p style="text-align: left;"><span style="color: rgb(49, 29, 72);">DOS SESIONES VIRTUALES DE ACOMPAÑAMIENTO EN VIVO.&nbsp;&nbsp;</span><br></p>
+<p><span style="color: rgb(211, 84, 0);"><strong><span style="font-size: 24px;">VALORADAS EN $174 USD</span></strong></span></p>
+				</div>
+        
+			</div>
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-text-image" src="https://bucket.mlcdn.com/a/1083/1083966/images/44606d18fb08564c46aa36df49f97623f154b8e7.png" style="display: block;" width="530" border="0">
+			</div>
+		</div>
+	</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-110">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(235, 219, 219);">Y COMO SI FUERA POCO...&nbsp;SI ACCEDES AL PROGRAMA&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(224, 129, 6);">EN LAS <strong>PRÓXIMAS 24 HORAS</strong>, RECIBIRÁS ADICIONALMENTE&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 22px;"><span style="color: rgb(235, 219, 219);"><strong>¡2 BONOS EXCLUSIVOS!</strong></span></span><br></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-112">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle">
+				<h2 class="subtitle-112">TE REGALO MI PROGRAMA</h2>
+				<div class="text-112">
+					<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(49, 29, 72);">7 ESTRATEGIAS PARA AFRONTAR EL MIEDO Y LA INCERTIDUMBRE&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADO EN $47 USD</strong></span></span></p>
+				</div>
+        
+			</div>
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-text-image" src="https://bucket.mlcdn.com/a/1083/1083966/images/51dd9236dd458c61d126f70f554ebf0ead5856f6.jpeg" style="display: block;" width="1360" border="0">
+			</div>
+		</div>
+	</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-114">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-116">
+						<div class="container">
+							
+								
+	
+	
+	
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+  
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+	<div class="row">
+		<div class="display-table">
+			<div class="col-sm-6 col-height col-middle align-center">
+				<img class="img-responsive display-inline col-image-text" src="https://bucket.mlcdn.com/a/1083/1083966/images/89b410b066043604131614dc00fe4d652b7b00d4.png" style="display: block;" width="545" border="0">
+			</div>
+			<div class="col-sm-6 col-height col-middle">
+				<div class="content-align-center">
+					<h2 class="subtitle-116">Y UNA SESIÓN DE ACOMPAÑAMIENTO INDIVIDUAL</h2>
+					<div class="text-116">
+						<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(49, 29, 72);">&nbsp;</span></span></p>
+<p style="text-align: center;"><span style="font-size: 30px;"><span style="color: rgb(211, 84, 0);"><strong>VALORADA EN $87 USD</strong></span></span></p>
+					</div>
+          
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-118">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-120">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>¿QUÉ ESTÁS ESPERANDO?</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-122">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>¡ACCEDE AHORA MISMO!</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-124">
+						<div class="container">
+							
+								
+	
+	
+
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+	
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<a class="btn btn-block" href="https://pay.hotmart.com/B76162116W" target="_blank">Sí, ¡QUIERO INGRESAR AHORA MISMO!</a>
+				
+
+	</div>
+</div>
+
+
+
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-126">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <h1><span style="color: rgb(142, 68, 173);"><span style="color: rgb(255, 255, 255);"><strong>PREGUNTAS FRECUENTES:</strong></span></span><br></h1>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-128">
+						<div class="container">
+							
+								
+									
+									
+									
+										
+									
+									
+										
+										
+										
+										
+									
+									
+										
+										
+									
+									
+										
+										
+									
+								
+								
+									<div class="row">
+										<div class="col-sm-4 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-129">¿Cuándo tengo acceso al programa?</h2>
+<div class="text-129">
+	<p style="text-align: center;"><span style="color: rgb(49, 29, 72);"><span style="font-size: 18px;"><span style="font-size: 18px;"></span></span>Al completar tu registro, recibirás automáticamente un mensaje en tu correo electrónico con las instrucciones para acceder de manera inmediata&nbsp;&nbsp;al contenido del Programa.</span></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-4 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-130">¿Qué garantía tengo si no es lo que busco?</h2>
+<div class="text-130">
+	<p style="text-align: center;"><span style="color: rgb(49, 29, 72);">El programa lo desarrollas en 2 o máximo 3 semanas, sin embargo, tienes una <strong>garantía de 7 días </strong>en los que podrás pedir la devolución de tu dinero.&nbsp;</span></p>
+<p style="text-align: right;"><u>¡Nunca nos lo han solicitado!</u><br></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-4">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-131">¿Qué pasa si no puedo estar en las sesiones en vivo?</h2>
+<div class="text-131">
+	<p style="text-align: center;">Las 2 sesiones en vivo serán grabadas y recibirás la grabación en caso de que no puedas estar presente.</p>
+</div>
+
+
+
+
+
+											
+										</div>
+									</div>
+								
+								
+								
+								
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-136">
+						<div class="container">
+							
+								
+									
+									
+									
+										
+									
+									
+										
+										
+										
+										
+									
+									
+										
+										
+									
+									
+										
+										
+									
+								
+								
+									<div class="row">
+										<div class="col-sm-4 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-137">¿Cuánto dura el programa completo?</h2>
+<div class="text-137">
+	<p style="text-align: center;"><span style="color: rgb(49, 29, 72);"><span style="font-size: 18px;"><span style="font-size: 18px;"></span></span>Está diseñado para que lo completes en 2 semanas, sin embargo, si no lo alcanzas a desarrollar, no hay problema, porque tú quedas con acceso ilimitado a todo el contenido y lo puedes repetir cuantas veces quieras.</span></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-4 col-res-30">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-138">¿Cuánto tiempo debo disponer cada día?</h2>
+<div class="text-138">
+	<p style="text-align: center;"><font color="#311d48">Los videos de contenido son muy cotros (10 a 15 minutos) a excepción de un ejercicio de visualización (25 min).&nbsp;</font></p>
+<p style="text-align: center;"><font color="#311d48">Lo demás depende del tiempo que dispongas&nbsp;para realizar los ejercicios prácticos.</font></p>
+</div>
+
+
+
+
+
+											
+										</div>
+										<div class="col-sm-4">
+											
+												
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+<h2 class="subtitle-139">Es un programa 100% individual?</h2>
+<div class="text-139">
+	<p style="text-align: center;">Es un programa individual con una experiencia grupal, ya que en las sesiones en vivo y en el grupo exclusivo de Whatsapp, podrás conocer a tus compañeros de viaje y compartir vivencias con ellos.</p>
+</div>
+
+
+
+
+
+											
+										</div>
+									</div>
+								
+								
+								
+								
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-144">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="font-size: 20px;"><span style="color: rgb(49, 29, 72);">¿Necesito conocimientos tecnológicos para acceder a la plataforma?</span></span></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-146">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="color: rgb(49, 29, 72);">La plataforma <strong>Hotmart </strong>es muy sencilla de acceder y en la primera Sesión En Vivo, te&nbsp;mostraré el recorrido para que te familiarices aún más&nbsp;con ella.</span></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-148">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="font-size: 20px;"><span style="color: rgb(49, 29, 72);">¿Qué más necesito para hacer el programa?</span></span></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-150">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p><span style="color: rgb(49, 29, 72);">Lo más importante es tu <strong>disposición.</strong>&nbsp;Como es un programa on-line, podrás hacerlo desde la comodidad de tu casa o desde el lugar que prefieras, sólo necesitas una buena conexión a internet, una libreta de notas y (si lo quieres), tu bebida o comida preferida.</span><br></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+
+<div class="container-fluid ml-152">
+	
+	<div class="row">
+		<div class="col-sm-12 pl0 pr0">
+			<hr>
+		</div>
+	</div>
+</div>
+
+				
+					<div class="container-fluid ml-154">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;"><span style="color: rgb(142, 68, 173); font-size: 24px;">En más de 30 años como psicóloga he acompañado a miles de personas como tú.<strong><br><br>Déjame acompañarte a tí&nbsp;también y&nbsp;aprende cómo hacerte cargo de tus emociones y a elegir cómo te quieres sentir en cada momento.</strong></span></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-156">
+						<div class="container">
+							
+								
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>¿Quiéres saber algo más de mí?</h1>
+	</div>
+</div>
+
+							
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-158">
+						<div class="container">
+							
+								
+									
+									
+									
+										
+									
+									
+										
+										
+										
+										
+									
+									
+										
+										
+										
+
+									
+									
+										
+										
+									
+								
+								
+								
+								
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											
+												
+	
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+		
+	
+	
+		
+		
+	
+
+
+<div class="media ml-159 ts-block">
+  <div class="media-left">
+      <img class="media-object" alt="" width="200" src="https://bucket.mlcdn.com/a/1083/1083966/images/181a1c663e4e2396fd249a819448ad0a7f1523d8.jpeg/a52c0dc4b56714b631e83d0ca3c756546876fff7.jpeg" style="display: block;" border="0">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Blanca Corredor</h4>
+    <div class="details">@BlancaCorredorCoach</div>
+    <div class="text-159">
+		
+	</div>
+	
+  </div>
+</div>
+
+
+
+											
+										</div>
+									</div>
+								
+								
+							
+						</div>
+					</div>
+				
+					<div class="container-fluid ml-166">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <ul><ul><li><span style="font-size: 20px;">Psicóloga con más de 30 años de experiencia profesional </span></li><li><span style="font-size: 20px;">Coach Ontológico Profesional desde hace casi 10 años.</span></li><li><span style="font-size: 20px;">Conferencista internacional.<br></span></li><li><span style="font-size: 20px;">Coautora de los Libros:</span><br><span style="font-size: 20px;">- Juntos pero no amarrados: Aciertos y desaciertos cotidianos en las relaciones de pareja</span><br><span style="font-size: 20px;">- Semillas de Enseñanza: Guía práctica para la realización de Talleres de desarrollo personal</span></li><li><span style="font-size: 20px;">Creadora de TALLERES virtuales como:</span><br><span style="font-size: 20px;">- Activa la Abundancia y la Prosperidad en tu Vida.</span><br><span style="font-size: 20px;">- Cómo evitar la procrastinación y pasar del propósito a la Acción.</span></li><li><span style="font-size: 20px;">Creadora del programa de Transformación Personal <strong><span style="color: rgb(142, 68, 173);">De Oruga a Mariposa</span></strong> - 5 Pasos para hacer realidad mis sueños y no desistir en el intento.</span></li></ul></ul>
+<p></p>
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+					
+<!-- {literal} -->
+<div class="editor-html-code">
+	<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+573162226490", // WhatsApp number
+            call_to_action: "Escríbeme para más información", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+</div>
+<!-- {/literal} -->
+
+				
+					<div class="container-fluid ml-170">
+						<div class="container">
+							
+								
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      
+	</div>
+</div>
+
+
+
+							
+							
+						</div>
+					</div>
+				
+		</div>
+	    <div class="row-success" style="display: none">
+			<template class="success-template">				
+						<div class="container-fluid ml-173">
+							<div class="container">
+								
+									
+	
+	
+      	
+	
+	
+		
+	
+	
+		
+		
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+		<h1>Estoy muy feliz de acompañarte en este viaje</h1>
+	</div>
+</div>
+
+								
+								
+							</div>
+						</div>
+					
+						<div class="container-fluid ml-175">
+							<div class="container">
+								
+									
+	
+	
+      	
+
+	
+		
+	
+	
+		
+		
+	
+	
+		
+		
+	
+
+<div class="row">
+  <div class="col-sm-12">
+      <p style="text-align: center;"><span style="color: #8e44ad;"><strong>Incluye mi dirección electrónica en tu lista de contactos para garantizar que recibas mis mensajes.</strong></span></p>
+<p style="text-align: center;"><span style="color: #8e44ad;">Si no los encuentras en tu bandeja de entrada, asegúrate de buscarlos en la bandeja de SPAM, correo no deseado o notificaciones.</span></p>
+	</div>
+</div>
+
+
+
+								
+								
+							</div>
+						</div>
+					
+			</template>
+		</div>
+
+		<div style="margin-bottom: 0px; margin-top: 0px;">
+
+		
+
+      
+
+        
+        
+        
+        
+        
+
+      
+					
+				
+				
+					
+					
+					
+				
+				
+					
+				
+
+      
+
+			<! -- Footer -- >
+			<div class="container-fluid ml-176 footer">
+        <div class="container">
+          <div class="row">
+            <! -- Content width -- >
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-sm-6 copyright">
+                  ©BlancaCorredorCoach_2023
+                </div>
+                <div class="col-sm-6 social-icons-block">
+                  
+                  <ul class="social-icons pull-right">
+                    <li>
+                      <a href="https://www.instagram.com/blancacorredorcoach/"><img width="28" height="28" alt="instagram" src="https://assets.mlcdn.com/ml/images/icons/social/white/instagram.png" style="display: block;" border="0"></a>
+                    </li><li>
+                      <a href="https://www.tiktok.com/@blancacorredor_coach"><img width="28" height="28" alt="tiktok" src="https://assets.mlcdn.com/ml/images/icons/social/white/tiktok.png" style="display: block;" border="0"></a>
+                    </li><li>
+                      <a href="https://www.facebook.com/BlancaCorredorCoach/"><img width="28" height="28" alt="facebook" src="https://assets.mlcdn.com/ml/images/icons/social/white/facebook.png" style="display: block;" border="0"></a>
+                    </li><li>
+                      <a href="https://www.linkedin.com/in/blancacorredorcoach/"><img width="28" height="28" alt="linkedin" src="https://assets.mlcdn.com/ml/images/icons/social/white/linkedin.png" style="display: block;" border="0"></a>
+                    </li><li>
+                      <a href="https://www.youtube.com/channel/UCwYeec0lqUdBnT3VZ_Jz_Fw"><img width="28" height="28" alt="youtube" src="https://assets.mlcdn.com/ml/images/icons/social/white/youtube.png" style="display: block;" border="0"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <! -- /Content width -- >
+          </div>
+        </div>
+      </div>
+			<! -- /Footer -- >
+
+			
+		
+		</div>
+
+        <! -- Powered by MailerLite -- >
+    <div class="container-fluid">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-12">
+			</div>
+		  </div>
+		</div>
+	</div>
+<! -- /Powered by MailerLite -- >
+    
+		<div style="display: none">
+		    <script>
+ 
+
+  var $ = window.ml_jQuery || window.jQuery;
+
+ document.onkeydown = function(evt) {
+   evt = evt || window.event;
+   var isEscape = false;
+   if ('key' in evt) {
+     isEscape = evt.key == 'Escape';
+   } else {
+     isEscape = evt.keyCode == 27;
+   }
+
+   if (isEscape) {
+     close();
+   }
+ };
+
+ function close() {
+        window.parent.postMessage('ml-accounts-1083966-n2i3n5i0r5-webforms-5905790-c5o7b7-hide', '*');
+ };
+
+ (function ($, window) {
+   function sendHeightToParent(selector, sendSize) {
+     var formHeight = $(selector).outerHeight();
+
+     window.parent.postMessage('ml-accounts-1083966-n2i3n5i0r5-webforms-5905790-c5o7b7-setHeight-' + formHeight + 'px', '*');
+
+     if (sendSize) {
+
+       var formWidth = $(selector).outerWidth();
+       window.parent.postMessage('ml-accounts-1083966-n2i3n5i0r5-webforms-5905790-c5o7b7-setSize-' + formHeight + 'px' + '-' + formWidth + 'px', '*');
+     }
+   }
+
+   var resizeTimer;
+   var formTypes = [
+     '.mailerlite-trigger-sendHeightToParent',
+
+     // old classes that triggers sendHeight too
+     '.mailerlite-popup',
+     '.mailerlite-slidebox',
+     '.mailerlite-form-bar',
+     '.mailerlite-fullscreen'
+   ];
+
+   function resizeFunction(formType, sendSize) {
+     sendHeightToParent(formType, sendSize);
+   }
+
+   formTypes.forEach(function (formType) {
+     if (window.sendHeightToParentTriggered) {
+       return;
+     }
+
+     if ($(formType).length) {
+       setTimeout(resizeFunction(formType), 200);
+
+       $(window).resize(function() {
+         clearTimeout(resizeTimer);
+         resizeTimer = setTimeout(resizeFunction(formType, true), 50);
+       });
+
+       // if height is already triggered - do not trigger again
+       window.sendHeightToParentTriggered = true;
+     }
+   })
+ })($, window);
+
+    function ml_webform_success_5905790 () {
+     $('.row-form').hide();
+     $('.row-success').show();
+     $(window).scrollTop(0);
+
+     
+     if ($('.row-success').data('autorefresh')) {
+       var autorefresh = Number($('.row-success').data('autorefresh'));
+       if (autorefresh && autorefresh > 0) {
+         setTimeout(function(){
+           window.location.reload();
+         }, autorefresh * 1000);
+       }
+     }
+
+     if ($('.row-success').find('.success-template').length && $('.success-template').html()) {
+       $('.row-success').replaceWith($('.success-template').html());
+     }
+   }
+ 
+    
+</script>
+
+      <img src="https://track.mailerlite.com/webforms/o/5905790/c5o7b7" alt="." width="1" height="1" style="display:none"/>
+
+    
+            
+
+  
+  <script>
+      (function(window) {
+  window.addEventListener("message", receiveMessage, false);
+
+  function receiveMessage(event) {
+      if (event && event.data && typeof event.data === 'string') {
+        var message_parts = event.data.split('-');
+        if (message_parts.length > 1) {
+            if (message_parts[0] == 'mlWebformSubmitSuccess') {
+                var id = message_parts[1];
+                var cookieName = 'mailerlite:webform:submited:' + id
+                var cookieValue = (new Date()).getTime();
+                document.cookie = cookieName + "=" + cookieValue + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+            } else if (message_parts[0] == 'mlWebformRedirect') {
+                var target = message_parts[message_parts.length - 1];
+                var targets = ['_blank', '_self', '_parent', '_top'];
+                var redirect = message_parts.slice(1, message_parts.length - 1).join('-');
+                if (targets.indexOf(target) < 0) {
+                    redirect = message_parts.slice(1).join('-');
+                    target = '_blank';
+                }
+
+                var redirectUrl = new URL(decodeURIComponent(redirect));
+                if (redirectUrl && redirectUrl.protocol != 'javascript:') {
+
+                    window.open(decodeURIComponent(redirect), target);
+                }
+            }
+        }
+      }
+  }
+})(window);
+  </script>
+
+	    </div>
+	    <style>
+			.popup {
+				display: none;
+				position: fixed;
+				top:0;
+				left:0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+			    background: rgba(0,0,0,0.35);
+			    overflow: scroll;
+			}
+			.webform-container {
+				padding: 30px;
+				margin: 0;
+			}
+			.mailerlite-container {
+		        width: 100% !important;
+		        box-sizing: border-box;
+		        margin: 0 auto;
+		        position: static;
+		        display: table;
+		        height: 100%;
+		    }
+		    .mailerlite-vertical-align-center {
+
+		        display: table-cell;
+		        vertical-align: middle;
+		        text-align: center;
+
+		    }
+		    .ml-subscribe-form .ml-vertical-align-center{
+		        display: table-cell;
+		        vertical-align: middle;
+		    }
+		    .mailerlite-webform {
+		        position: relative;
+		        display: inline-block;
+		        width: 100%;
+		        padding: 0px;
+		        max-width: 480px;
+		        text-align: left;
+		    }
+		    .close-popup {
+				position: absolute;
+				right: 5px;
+				top: 5px;
+				height: 30px;
+				width: 30px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 16px;
+				z-index: 2;
+		    }
+		    .close-popup:hover {
+		        text-decoration: none;
+		    }
+		</style>
+		
+		<script>
+			function showPopup(ele) {
+				var container = ele.closest('.container');
+				var popup = container.find('.popup');
+				var bodyFixed = $('body');
+				popup.show('fadeIn');
+				bodyFixed.addClass('bodyClassFixed')
+			}
+			function hidePopup(ele) {
+				var popup = ele.closest('.popup');
+				var bodyFixed = $('body');
+				popup.hide();
+				bodyFixed.removeClass('bodyClassFixed');
+			}
+			$(document).on('click', '.popup', function() {
+				hidePopup($(this));
+			});
+			$(document).on('click', '.mailerlite-webform', function(e) {
+				e.stopPropagation();
+			})
+		</script>
+		
+		    <script src="https://static.mailerlite.com/js/w/webforms.min.js?vd4de52e171e8eb9c47c0c20caf367ddf" type="text/javascript"></script>
+    
+    </body>
+</html>
